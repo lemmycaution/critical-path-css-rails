@@ -19,7 +19,7 @@ RSpec.describe 'CssFetcher' do
     )
     fetcher = CriticalPathCss::CssFetcher.new(config)
     expect(fetcher.fetch).to(
-      eq('/test.html' => "p {\n  color: red;\n}\n")
+      eq('/test.html' => "p{color:red}")
     )
   end
 end
