@@ -10,7 +10,10 @@ module CriticalPathCss
     end
 
     def fetch
-      @config.routes.map { |route| [route, css_for_route(route)] }.to_h
+      @config.routes.map { |route|
+        path, route = route.split(':')
+        [path || route, css_for_route(route || path)]
+      }.to_h
     end
 
     def fetch_route(route)
@@ -25,10 +28,10 @@ module CriticalPathCss
         'css' => @config.css_path,
         ## optional params
         # viewport dimensions
-        'width' => @config.width || 1300,
-        'height' => @config.height || 900,
+        'width' => 1300,
+        'height' => 900,
         # CSS selectors to always include, e.g.:
-        'forceInclude' => @config.force_include || [
+        'forceInclude' => [
           #  '.keepMeEvenIfNotSeenInDom',
           #  '^\.regexWorksToo'
         ],

@@ -5,11 +5,14 @@ defaults: &defaults
   # css_path: /path/to/css/from/public/main.css
   routes:
     - /
-  # width: 1300
-  # height: 900
-  # force_include:
-  #   - .keepMeEvenIfNotSeenInDom
-  #   - ^\.regexWorksToo
+  # swallow dynamic routes by omitting :id like part, use cachekey:actualroute pattern, eg:
+  # - /posts:/posts/my-dynamic-post-id
+  # penthouse_options: 
+  #   width: 1300
+  #   height: 900
+  #   force_include:
+  #     - .keepMeEvenIfNotSeenInDom
+  #     - ^\.regexWorksToo
 
 development:
   <<: *defaults
