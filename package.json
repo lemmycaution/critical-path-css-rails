@@ -7,6 +7,7 @@
     "lib": "lib"
   },
   "dependencies": {
+    "harp-minify": "^0.4.0",
     "penthouse": "=0.11.5"
   },
   "license": "MIT"
