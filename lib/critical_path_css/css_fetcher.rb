@@ -25,10 +25,10 @@ module CriticalPathCss
         'css' => @config.css_path,
         ## optional params
         # viewport dimensions
-        'width' => 1300,
-        'height' => 900,
+        'width' => @config.width || 1300,
+        'height' => @config.height || 900,
         # CSS selectors to always include, e.g.:
-        'forceInclude' => [
+        'forceInclude' => @config.force_include || [
           #  '.keepMeEvenIfNotSeenInDom',
           #  '^\.regexWorksToo'
         ],
