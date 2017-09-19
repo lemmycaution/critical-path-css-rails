@@ -15,7 +15,8 @@ RSpec.describe 'CssFetcher' do
     config = CriticalPathCss::Configuration.new(
       'base_url' => StaticFileServer.url,
       'css_path' => 'spec/fixtures/static/test.css',
-      'routes' => ['/test.html']
+      'routes' => ['/test.html'],
+      'minify' => true
     )
     fetcher = CriticalPathCss::CssFetcher.new(config)
     expect(fetcher.fetch).to(
