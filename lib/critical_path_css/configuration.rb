@@ -25,5 +25,9 @@ module CriticalPathCss
     def penthouse_options
       @config['penthouse_options'] || {}
     end
+
+    def minify
+      @config['minify']
+    end
   end
 end
